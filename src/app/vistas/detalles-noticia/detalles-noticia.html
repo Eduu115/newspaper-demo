@@ -1,0 +1,89 @@
+<div class="container py-4" style="max-width: 800px;">
+
+    <div class="mb-4 text-center">
+        <span class="badge bg-primary mb-2">Tecnología</span>
+        <h1 class="fw-bold display-5">El futuro de Angular: Signals y Standalone</h1>
+        <p class="text-muted">Publicado el 25 de Octubre, 2025 por Ana García</p>
+    </div>
+
+    <div class="mb-5 rounded-4 overflow-hidden shadow-sm">
+        <img src="/images/angular.png" class="img-fluid w-100" alt="Banner noticia"
+            style="max-height: 400px; object-fit: cover;">
+    </div>
+
+    <div class="card border-0 shadow-sm mb-5">
+        <div class="card-body position-relative p-4 p-md-5 font-monospace">
+
+            <p class="lead mb-4 fw-bold">
+                Angular ha evolucionado drásticamente en los últimos años. Con la llegada de los componentes Standalone,
+                decimos adiós a los NgModules y damos la bienvenida a una arquitectura más simple.
+            </p>
+
+            <div style="filter: blur(5px); opacity: 0.4; user-select: none;" aria-hidden="true">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                    anim id est laborum.</p>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+                    dicta sunt explicabo.</p>
+            </div>
+
+            <div class="position-absolute top-50 start-50 translate-middle text-center w-100 p-3"
+                style="z-index: 10; max-width: 450px;">
+                <div class="bg-white p-4 shadow-lg rounded-4 border border-primary border-opacity-25">
+                    <div class="mb-3 text-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                            class="bi bi-lock-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-12z" />
+                        </svg>
+                    </div>
+                    <h4 class="fw-bold">Contenido Exclusivo</h4>
+                    <p class="text-muted mb-4">Esta es una noticia premium. Inicia sesión para desbloquear el artículo
+                        completo.</p>
+                    <a routerLink="/login" class="btn btn-primary btn-lg w-100 fw-bold">Iniciar Sesión Ahora</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <h3 class="mb-4 pb-2 border-bottom">Preguntas Frecuentes</h3>
+
+    <div class="accordion" id="faqAccordion">
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                    ¿Es necesario saber TypeScript?
+                </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Sí, Angular se basa fuertemente en TypeScript para ofrecer seguridad de tipos y mejor herramientas
+                    de desarrollo.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq2">
+                    ¿Qué son los Signals?
+                </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Los Signals son la nueva forma reactiva de manejar el estado en Angular, permitiendo actualizaciones
+                    más granulares sin Zone.js.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
