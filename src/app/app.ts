@@ -1,12 +1,15 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+// Verifica que esta ruta coincida con tu carpeta components
+import { Breadcrumb } from './components/breadcrumb/breadcrumb';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [RouterOutlet, Breadcrumb],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('newspaper');
+  title = 'newspaper-demo';
 }
