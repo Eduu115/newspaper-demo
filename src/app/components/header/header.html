@@ -1,11 +1,23 @@
-<header class="header">
-  <div class="container header-grid">
-    <div class="marcas">
-      <div class="nombre-marca">EL DIARIO AJE</div>
-      <h1 class="nombre-periodico">El Diario AJE</h1>
+<header class="text-light py-3" style="background: linear-gradient(180deg, #000 0%, #000 100%);">
+  <div class="container">
+    <div class="row align-items-center g-3">
+      
+      <div class="col">
+        <div class="text-uppercase small fw-semibold opacity-75" style="letter-spacing:.2em;">
+          EL DIARIO AJE
+        </div>
+        <h1 class="m-0" style="font-size:34px; line-height:1.05;">
+          El Diario AJE
+        </h1>
+      </div>
+
+      <div class="col-auto">
+        <a routerLink="/suscribete"
+           class="btn btn-outline-danger rounded-3 px-3 py-2 text-white">
+          Suscríbete
+        </a>
+      </div>
+
     </div>
-
-    <a class="btn" routerLink="/suscribete">Suscríbete</a>
-
   </div>
 </header>
