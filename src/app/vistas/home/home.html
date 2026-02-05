@@ -4,51 +4,24 @@
 
     <div class="row g-4">
 
-        <div class="col-12 col-md-4">
-            <div class="card h-100 overflow-hidden card-noticia border-0 shadow-sm" routerLink="/noticia/1">
-                <img src="/images/angular.png" class="card-img-top" alt="Angular">
+        <div class="col-12 col-md-4" *ngFor="let noticia of listaNoticias">
+
+            <div class="card h-100 overflow-hidden card-noticia border-0 shadow-sm"
+                [routerLink]="['/noticia', noticia.id]">
+
+                <img [src]="noticia.imagen" class="card-img-top" [alt]="noticia.titulo">
 
                 <div class="card-header bg-white border-0 pt-3">
-                    <span class="badge bg-primary">Tecnología</span>
+                    <span class="badge bg-{{noticia.tipo}}">{{ noticia.categoria }}</span>
                 </div>
+
                 <div class="card-body pt-1">
-                    <h5 class="card-title fw-bold">El futuro de Angular</h5>
+                    <h5 class="card-title fw-bold">{{ noticia.titulo }}</h5>
                     <p class="card-text text-muted small">
-                        Descubre las novedades de la versión 21 y cómo las señales están cambiando el desarrollo web...
+                        {{ noticia.textoCorto }}
                     </p>
                 </div>
-            </div>
-        </div>
 
-        <div class="col-12 col-md-4">
-            <div class="card h-100 overflow-hidden card-noticia border-0 shadow-sm" routerLink="/noticia/2">
-                <img src="/images/stonks.jpg" class="card-img-top" alt="Economía">
-
-                <div class="card-header bg-white border-0 pt-3">
-                    <span class="badge bg-success">Economía</span>
-                </div>
-                <div class="card-body pt-1">
-                    <h5 class="card-title fw-bold">La bolsa sube hoy</h5>
-                    <p class="card-text text-muted small">
-                        Los mercados reaccionan positivamente a las nuevas políticas...
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-md-4">
-            <div class="card h-100 overflow-hidden card-noticia border-0 shadow-sm" routerLink="/noticia/3">
-                <img src="/images/copaAmerica.jpg" class="card-img-top" alt="Deportes">
-
-                <div class="card-header bg-white border-0 pt-3">
-                    <span class="badge bg-danger">Deportes</span>
-                </div>
-                <div class="card-body pt-1">
-                    <h5 class="card-title fw-bold">Copa América</h5>
-                    <p class="card-text text-muted small">
-                        Un análisis exhaustivo de los equipos que llegarán a la gran final...
-                    </p>
-                </div>
             </div>
         </div>
 
