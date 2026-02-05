@@ -1,5 +1,10 @@
+nav{
+ margin: 1px;
+
+}
+
 .navbar-periodico {
-  background-color: black;
+  background-color: gray;
   font-size: 15px;
   letter-spacing: 0.5px;
 }
