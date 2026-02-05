@@ -4,7 +4,6 @@ import { filter } from 'rxjs/operators';
 import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
 
-//eliminaremos todo lo relacionado a el ngIf
 
 @Component({
   selector: 'app-root',
