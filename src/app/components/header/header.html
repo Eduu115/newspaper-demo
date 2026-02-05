@@ -11,10 +11,20 @@
         </h1>
       </div>
 
-      <div class="col-auto">
-        <a routerLink="/login" class="btn btn-outline-danger rounded-3 px-3 py-2 text-white">
-          Suscríbete
-        </a>
+      <div class="col-auto d-flex align-items-center gap-2">
+        @if (session) {
+          <span class="text-white">Hola {{ session.email }}</span>
+          <button type="button" class="btn btn-danger rounded-3 px-3 py-2 text-white" (click)="logout()">
+            Cerrar sesión
+          </button>
+        } @else {
+          <a routerLink="/register" class="btn btn-outline-danger rounded-3 px-3 py-2 text-white">
+            Suscríbete
+          </a>
+          <a routerLink="/login" class="m-2 btn btn-danger rounded-3 px-3 py-2 text-white">
+            Iniciar sesión
+          </a>
+        }
       </div>
 
     </div>
