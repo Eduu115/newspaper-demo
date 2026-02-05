@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-breadcrumb',
@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './breadcrumb.css',
 })
 export class Breadcrumb {
-
+  @Input() categoria: string = '';
+  @Input() titulo: string = '';
 }
