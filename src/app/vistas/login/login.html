@@ -1,53 +1,31 @@
-<div class="d-flex justify-content-center align-items-center vh-100">
+<div class="container">
+    <div class="row justify-content-center align-items-center login-wrapper">
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow">
+                <div class="card-body p-4">
+                    <h3 class="text-center mb-4">Bienvenido</h3>
 
-    <div class="card border-0 shadow-lg p-4" style="width: 100%; max-width: 400px; border-radius: 1rem;">
-        <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" placeholder="admin@test.com">
+                        </div>
 
-            <div class="text-center mb-4">
-                <h2 class="fw-bold text-dark">Bienvenido</h2>
-                <p class="text-muted small">Ingresa tus credenciales para continuar</p>
-            </div>
+                        <div class="mb-3">
+                            <label class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" placeholder="******">
+                        </div>
 
-            <form>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-primary" type="button">Ingresar</button>
+                        </div>
+                    </form>
 
-                <div class="form-floating mb-3">
-                    <input type="email" class="form-control rounded-3" id="floatingInput"
-                        placeholder="nombre@ejemplo.com">
-                    <label for="floatingInput">Correo Electrónico</label>
+                    <div class="text-center mt-3">
+                        <a routerLink="/home" class="small text-muted text-decoration-none">Volver al inicio</a>
+                    </div>
                 </div>
-
-                <div class="form-floating mb-4">
-                    <input type="password" class="form-control rounded-3" id="floatingPassword"
-                        placeholder="Contraseña">
-                    <label for="floatingPassword">Contraseña</label>
-                </div>
-
-                <div class="d-grid gap-2 mb-4">
-                    <button class="btn btn-primary btn-lg rounded-3 fw-bold" type="button">
-                        Iniciar Sesión
-                    </button>
-                </div>
-
-                <div class="text-center text-muted small">
-                    <a href="#" class="text-decoration-none text-secondary">¿Olvidaste tu contraseña?</a>
-                </div>
-
-            </form>
-
-        </div>
-    </div>
-
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-        <div id="liveToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive"
-            aria-atomic="true">
-            <div class="d-flex">
-                <div class="toast-body fw-bold">
-                    ✅ ¡Sesión iniciada correctamente!
-                </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-                    aria-label="Close"></button>
             </div>
         </div>
     </div>
-
 </div>

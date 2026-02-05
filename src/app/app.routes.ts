@@ -4,8 +4,9 @@ import { Login } from './vistas/login/login';
 import { DetallesNoticia } from './vistas/detalles-noticia/detalles-noticia';
 
 export const routes: Routes = [
-    { path: '', component: Home },
-    { path: 'noticia/:id', component: DetallesNoticia },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home', component: Home },
     { path: 'login', component: Login },
-    { path: '**', redirectTo: '' }
+    { path: 'noticia/:id', component: DetallesNoticia },
+    { path: '**', redirectTo: 'home' }
 ];

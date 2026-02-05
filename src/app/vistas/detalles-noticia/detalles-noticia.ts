@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-detalles-noticia',
-  imports: [],
+  standalone: true,
+  imports: [RouterLink],
   templateUrl: './detalles-noticia.html',
   styleUrl: './detalles-noticia.css',
 })
