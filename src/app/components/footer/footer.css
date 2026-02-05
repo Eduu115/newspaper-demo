@@ -10,13 +10,13 @@
 }
 
 .footer-social-link:hover {
-  background-color: #e9e9e9;
+  background-color: whitesmoke ;
   transform: translateY(-1px);
 }
 
 .footer-social-img {
-  width: 20px;
-  height: 20px;
+  width: 29px;
+  height: 29px;
   object-fit: contain;
   display: block;
 }
