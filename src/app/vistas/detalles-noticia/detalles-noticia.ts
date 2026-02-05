@@ -18,8 +18,9 @@ export class DetallesNoticia {
   noticia: Noticia | undefined;
 
   constructor() {
-    // this.noticia = this.newsService.getNoticiaById();
-
+    this.activatedRoute.paramMap.subscribe(params => {
+      const id = Number(params.get('id'));
+      this.noticia = this.newsService.getNoticiaById(id);
+    });
   }
-
 }
