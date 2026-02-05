@@ -1,1 +1,31 @@
-<p>collapse works!</p>
+<h3 class="mb-4 pb-2 border-bottom">Preguntas Frecuentes</h3>
+
+<div class="accordion" id="faqAccordion">
+
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                ¿Es necesario saber TypeScript?
+            </button>
+        </h2>
+        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+                Sí, Angular se basa fuertemente en TypeScript para ofrecer seguridad de tipos.
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                ¿Qué son los Signals?
+            </button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+                Los Signals son la nueva forma reactiva de manejar el estado en Angular.
+            </div>
+        </div>
+    </div>
+
+</div>

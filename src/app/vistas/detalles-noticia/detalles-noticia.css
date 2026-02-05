@@ -1,0 +1,43 @@
+.badge {
+    --bs-badge-padding-x: 0.65em;
+    --bs-badge-padding-y: 0.35em;
+    --bs-badge-font-size: 0.75em;
+    --bs-badge-font-weight: 700;
+    --bs-badge-color: #fff;
+    --bs-badge-border-radius: var(--bs-border-radius);
+    display: inline-block;
+    padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
+    font-size: 16px;
+    font-weight: var(--bs-badge-font-weight);
+    line-height: 1;
+    color: var(--bs-badge-color);
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: var(--bs-badge-border-radius);
+}
+
+/* Limita el ancho del artículo para mejorar la lectura */
+.article-container {
+    max-width: 800px;
+}
+
+/* Ajusta la imagen principal */
+.banner-image {
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* Efecto de texto borroso para contenido premium */
+.premium-blur {
+    filter: blur(5px);
+    opacity: 0.4;
+    user-select: none;
+    /* Evita que copien el texto */
+}
+
+/* Posicionamiento de la tarjeta de bloqueo (candado) */
+.lock-overlay {
+    z-index: 10;
+    max-width: 450px;
+}

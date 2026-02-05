@@ -1,0 +1,21 @@
+/* Asegura que todas las fotos tengan la misma altura y no se deformen */
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Estilos para la tarjeta interactiva */
+.card-noticia {
+    cursor: pointer;
+    /* Manita al pasar el ratón */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    /* Suaviza la animación */
+}
+
+/* Efecto al pasar el ratón por encima */
+.card-noticia:hover {
+    transform: translateY(-5px);
+    /* Se mueve 5px hacia arriba */
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+    /* Sombra más fuerte */
+}
