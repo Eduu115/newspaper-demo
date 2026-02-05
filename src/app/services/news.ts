@@ -98,7 +98,7 @@ export class NewsService {
     {
       id: 8,
       titulo: 'El Gobierno aprueba a dos Decretos',
-      imagen: '/images/copaAmerica.jpg',
+      imagen: '/images/decretos.jpg',
       categoria: 'Economía',
       tipo: 'success', // Verde
       textoCorto: 'El Gobierno se decanta finalmente por aprobar hoy dos decretos, uno de pensiones y otro con el escudo social...',
@@ -108,13 +108,13 @@ export class NewsService {
     },
     {
       id: 9,
-      titulo: 'Copa América',
-      imagen: '/images/copaAmerica.jpg',
-      categoria: 'Deportes',
-      tipo: 'danger', // Rojo
-      textoCorto: 'Un análisis exhaustivo de los equipos que llegarán a la gran final...',
-      textoLargo: 'Todos los detalles sobre los partidos de la Copa América...',
-      fecha: '2025-10-20',
+      titulo: 'Estados Unidos ataca Venezuela y captura a Maduro',
+      imagen: '/images/capturaMaduro.jpg',
+      categoria: 'Politica',
+      tipo: 'secondary', // Gris
+      textoCorto: 'Trump anuncia que Washington “dirigirá” el país hasta que haya “una transición segura”. El chavista llega a Nueva York para ser juzgado por narcoterrorismo....',
+      textoLargo: 'Los Estados Unidos de Donald Trump cambiaron profundamente América Latina este sábado con un ataque militar contra Venezuela que incluyó la captura del presidente Nicolás Maduro y su traslado a Nueva York para ser juzgado por narcoterrorismo. Horas después de la operación, el presidente republicano anunció que Estados Unidos asumirá la gestión del país sudamericano hasta que haya una transición que considere satisfactoria y que las petroleras estadounidenses resucitarán la maltrecha industria venezolana del crudo. Después de esta comparecencia, desde Caracas la vicepresidenta Delcy Rodríguez ha pedido la liberación de Maduro -“el único presidente”- y asegurado que Venezuela no “volverá a ser esclava ni colonia de ningún imperio”. Maduro durmió ya en Centro de Detención de Brooklyn, donde fue trasladado tras su captura en Caracas. El ataque reabre cuatro décadas después la época de intervenciones estadounidenses en América Latina',
+      fecha: '03-01-2026',
       premium: false
     }
   ];
