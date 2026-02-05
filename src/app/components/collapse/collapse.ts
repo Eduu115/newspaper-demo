@@ -2,10 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-collapse',
-  imports: [],
+  standalone: true,
   templateUrl: './collapse.html',
   styleUrl: './collapse.css',
 })
-export class Collapse {
+export class Collapse { }
 
-}
