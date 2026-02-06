@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { UsersService } from '../../services/users';
 
@@ -14,18 +14,17 @@ export class Login implements OnInit {
     email = '';
     password = '';
     errorMessage = '';
+    private returnUrl: string | null = null;
 
     constructor(
         private router: Router,
+        private route: ActivatedRoute,
         private usersService: UsersService
     ) { }
 
-    // no sabia que para el angular se usa un fokin constructor por cojones para las clases
-    // wow media hora en rojo estuvo
-    // antes, simplemente llamaba al metodo en el login() y ya esta, como en javascript normal fok
-
     ngOnInit(): void {
         this.usersService.setUsersEjemplo();
+        this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
     }
 
     login(): void {
@@ -34,7 +33,9 @@ export class Login implements OnInit {
 
         if (user) {
             this.usersService.setCurrentSession(user);
-            this.router.navigate(['/home']);
+            // Volver a la noticia (o la URL indicada) si veníamos de ahí; si no, a inicio
+            const target = this.returnUrl && this.returnUrl.startsWith('/') ? this.returnUrl : '/home';
+            this.router.navigateByUrl(target);
         } else {
             this.errorMessage = 'Correo o contraseña incorrectos.';
         }

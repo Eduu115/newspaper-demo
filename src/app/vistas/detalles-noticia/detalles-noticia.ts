@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common'; //para ngFor
 import { Breadcrumb } from "../../components/breadcrumb/breadcrumb";
 import { Collapse } from "../../components/collapse/collapse";
 import { NewsService, Noticia } from '../../services/news';
+import { UsersService } from '../../services/users';
 
 @Component({
   selector: 'app-detalles-noticia',
@@ -15,6 +16,8 @@ import { NewsService, Noticia } from '../../services/news';
 export class DetallesNoticia {
   private activatedRoute = inject(ActivatedRoute);
   private newsService = inject(NewsService);
+  private usersService = inject(UsersService);
+
   noticia: Noticia | undefined;
 
   constructor() {
@@ -22,5 +25,9 @@ export class DetallesNoticia {
       const id = Number(params.get('id'));
       this.noticia = this.newsService.getNoticiaById(id);
     });
+  }
+
+  get usuarioLogueado(): boolean {
+    return this.usersService.getCurrentSession() !== null;
   }
 }
