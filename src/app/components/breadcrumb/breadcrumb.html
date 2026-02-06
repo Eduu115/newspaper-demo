@@ -1,15 +1,17 @@
 <nav aria-label="breadcrumb" class="mb-4">
     <ol class="breadcrumb p-3 rounded-3">
         <li class="breadcrumb-item">
-            <a routerLink="/" class="text-decoration-none fw-bold">
+            <a routerLink="/home" class="text-decoration-none fw-bold">
                 Inicio
             </a>
         </li>
         <li class="breadcrumb-item">
-            <span class="text-primary">categoria</span>
+            <a routerLink="/categorias" class="text-decoration-none text-primary">
+                {{ categoria || 'Categorías' }}
+            </a>
         </li>
         <li class="breadcrumb-item active text-truncate breadcrumb-title" aria-current="page">
-            titulo
+            {{ titulo }}
         </li>
     </ol>
 </nav>

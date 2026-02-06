@@ -1,0 +1,9 @@
+.form-check-input:checked {
+    background-color: #d4af37;
+    border-color: #d4af37;
+}
+
+.form-check-label {
+    font-weight: 500;
+}
+

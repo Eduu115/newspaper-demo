@@ -41,3 +41,8 @@
     z-index: 10;
     max-width: 450px;
 }
+
+.badge-premium {
+    background: linear-gradient(135deg, #d4af37, #f7e08c);
+    color: #4a3b0a;
+}

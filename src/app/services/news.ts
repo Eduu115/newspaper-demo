@@ -125,6 +125,13 @@ export class NewsService {
         return this.noticias;
     }
 
+    getNoticiasByCategoria(categoria: string): Noticia[] {
+        const categoriaNormalizada = categoria.toLowerCase();
+        return this.noticias.filter(
+            n => n.categoria.toLowerCase() === categoriaNormalizada
+        );
+    }
+
     getNoticiaById(id: number): Noticia | undefined {
         return this.noticias.find(n => n.id === id);
     }
