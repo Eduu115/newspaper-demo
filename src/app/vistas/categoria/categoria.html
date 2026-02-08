@@ -1,0 +1,35 @@
+<div class="container py-4">
+
+  <app-breadcrumb [categoria]="nombreCategoria" [titulo]="'Noticias de ' + nombreCategoria"></app-breadcrumb>
+
+  <h2 class="mb-4 border-bottom pb-2">Noticias de {{ nombreCategoria }}</h2>
+
+  <app-premium-toggle [(excluirPremium)]="excluirPremium"></app-premium-toggle>
+
+  <div class="row g-4">
+
+    <div class="col-12 col-md-4" *ngFor="let noticia of noticiasVisibles">
+
+      <div class="card h-100 overflow-hidden card-noticia border-0 shadow-sm"
+        [routerLink]="['/noticia', noticia.id]">
+
+        <img [src]="noticia.imagen" class="card-img-top" [alt]="noticia.titulo">
+
+        <div class="card-header bg-white border-0 pt-3 d-flex justify-content-between align-items-center">
+          <span class="badge bg-{{noticia.tipo}}">{{ noticia.categoria }}</span>
+          <span *ngIf="noticia.premium" class="badge badge-premium">PREMIUM</span>
+        </div>
+
+        <div class="card-body pt-1">
+          <h5 class="card-title fw-bold">{{ noticia.titulo }}</h5>
+          <p class="card-text text-muted small">
+            {{ noticia.textoCorto }}
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+

@@ -1,0 +1,17 @@
+<div class="container py-4">
+
+  <app-breadcrumb [categoria]="'Categorías'" [titulo]="'Listado de categorías'"></app-breadcrumb>
+
+  <h2 class="mb-4 border-bottom pb-2">Categorías</h2>
+
+  <div class="row g-3">
+    <div class="col-6 col-md-3" *ngFor="let categoria of categorias">
+      <a class="btn btn-outline-primary w-100 py-3"
+        [routerLink]="['/categoria', categoria]">
+        {{ categoria }}
+      </a>
+    </div>
+  </div>
+
+</div>
+

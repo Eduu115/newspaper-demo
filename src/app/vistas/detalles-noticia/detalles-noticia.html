@@ -1,60 +1,69 @@
 <div class="container py-4 article-container">
 
-    <app-breadcrumb></app-breadcrumb>
+    <div *ngIf="noticia">
 
-    <div class="mb-4 text-center">
-        <span class="badge bg-primary mb-2">Tecnología</span>
-        <h1 class="fw-bold display-5">El futuro de Angular: Signals y Standalone</h1>
-        <p class="text-muted">Publicado el 25 de Octubre, 2025 por Ana García</p>
-    </div>
+        <app-breadcrumb [categoria]="noticia.categoria" [titulo]="noticia.titulo">
+        </app-breadcrumb>
 
-    <div class="mb-5 rounded-4 overflow-hidden shadow-sm">
-        <img src="/images/angular.png" class="img-fluid w-100 banner-image" alt="Banner noticia">
-    </div>
-
-    <div class="card border-0 shadow-sm mb-5">
-        <div class="card-body position-relative p-4 p-md-5 font-monospace">
-
-            <p class="lead mb-4 fw-bold">
-                Angular ha evolucionado drásticamente en los últimos años. Con la llegada de los componentes
-                Standalone,
-                decimos adiós a los NgModules y damos la bienvenida a una arquitectura más simple.
-            </p>
-
-            <div class="premium-blur" aria-hidden="true">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                    labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                    ut
-                    aliquip ex ea commodo consequat.</p>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                    mollit
-                    anim id est laborum.</p>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-                    dicta sunt explicabo.</p>
+        <div class="mb-4 text-center">
+            <div class="mb-2">
+                <span class="badge bg-{{noticia.tipo}} me-2">{{ noticia.categoria }}</span>
+                <span *ngIf="noticia.premium" class="badge badge-premium">PREMIUM</span>
             </div>
+            <h1 class="fw-bold display-5">{{ noticia.titulo }}</h1>
+            <p class="text-muted">Publicado el {{ noticia.fecha }}</p>
+        </div>
 
-            <div class="position-absolute top-50 start-50 translate-middle text-center w-100 p-3 lock-overlay">
-                <div class="bg-white p-4 shadow-lg rounded-4 border border-primary border-opacity-25">
-                    <div class="mb-3 text-primary">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                            class="bi bi-lock-fill" viewBox="0 0 16 16">
-                            <path
-                                d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-12z" />
-                        </svg>
+        <div class="mb-5 rounded-4 overflow-hidden shadow-sm">
+            <img [src]="noticia.imagen" class="img-fluid w-100 banner-image" [alt]="noticia.titulo">
+        </div>
+
+        <div class="card border-0 shadow-sm mb-5">
+            <div class="card-body position-relative p-4 p-md-5 font-monospace">
+
+                <p class="lead mb-4 fw-bold">
+                    {{ noticia.textoCorto }}
+                </p>
+
+                <!-- Contenido completo visible si NO es premium o si el usuario está logueado -->
+                <div *ngIf="!noticia.premium || usuarioLogueado">
+                    <p>{{ noticia.textoLargo }}</p>
+                </div>
+
+                <!-- Bloqueo solo si es premium Y no hay sesión iniciada -->
+                <div *ngIf="noticia.premium && !usuarioLogueado">
+                    <div class="premium-blur" aria-hidden="true">
+                        <p>Lorem ipsum dolor sit amet, texto de relleno para simular contenido...</p>
+                        <p>{{ noticia.textoLargo }}</p>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
                     </div>
-                    <h4 class="fw-bold">Contenido Exclusivo</h4>
-                    <p class="text-muted mb-4">Esta es una noticia premium. Inicia sesión para desbloquear el
-                        artículo
-                        completo.</p>
-                    <a routerLink="/login" class="btn btn-primary btn-lg w-100 fw-bold">Iniciar Sesión Ahora</a>
+
+                    <div class="position-absolute top-50 start-50 translate-middle text-center w-100 p-3 lock-overlay">
+                        <div class="bg-white p-4 shadow-lg rounded-4 border border-primary border-opacity-25">
+                            <div class="mb-3 text-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                                    class="bi bi-lock-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-12z" />
+                                </svg>
+                            </div>
+                            <h4 class="fw-bold">Contenido Exclusivo</h4>
+                            <p class="text-muted mb-4">Esta es una noticia premium. Inicia sesión para desbloquear el
+                                artículo completo.</p>
+                            <a [routerLink]="['/login']" [queryParams]="{ returnUrl: '/noticia/' + noticia.id }" class="btn btn-primary btn-lg w-100 fw-bold">Iniciar Sesión Ahora</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
+
+        <app-collapse></app-collapse>
+
     </div>
 
-    <app-collapse></app-collapse>
+    <div class="text-center mt-5" *ngIf="!noticia">
+        <h2>😕 Noticia no encontrada</h2>
+        <a routerLink="/home" class="btn btn-primary mt-3">Ir al Inicio</a>
+    </div>
+
 </div>
