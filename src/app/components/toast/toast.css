@@ -1,0 +1,7 @@
+.toast-container {
+    z-index: 9999 !important;
+}
+
+.toast {
+    opacity: 1 !important;
+}
