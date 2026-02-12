@@ -1,31 +1,40 @@
-<h3 class="mb-4 pb-2 border-bottom">Preguntas Frecuentes</h3>
+<h3 class="mb-4 pb-2 border-bottom">Información de Cuenta</h3>
 
-<div class="accordion" id="faqAccordion">
+<p class="d-inline-flex gap-1 flex-wrap">
+    <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAccount"
+        aria-expanded="false" aria-controls="collapseAccount">
+        Ventajas de registrarse
+    </button>
+    <button class="btn btn-outline-warning" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePremium"
+        aria-expanded="false" aria-controls="collapsePremium">
+        Contenido Premium
+    </button>
+    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePrivacy"
+        aria-expanded="false" aria-controls="collapsePrivacy">
+        Privacidad
+    </button>
+</p>
 
-    <div class="accordion-item">
-        <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                ¿Es necesario saber TypeScript?
-            </button>
-        </h2>
-        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-                Sí, Angular se basa fuertemente en TypeScript para ofrecer seguridad de tipos.
-            </div>
-        </div>
+<div class="collapse mb-2" id="collapseAccount">
+    <div class="card card-body border-primary">
+        <h5 class="card-title text-primary">¿Por qué registrarse?</h5>
+        <p class="card-text">Al crear una cuenta podrás guardar tus noticias favoritas, personalizar tu feed de noticias
+            y participar en los comentarios de los artículos más polémicos.</p>
     </div>
+</div>
 
-    <div class="accordion-item">
-        <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                ¿Qué son los Signals?
-            </button>
-        </h2>
-        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-                Los Signals son la nueva forma reactiva de manejar el estado en Angular.
-            </div>
-        </div>
+<div class="collapse mb-2" id="collapsePremium">
+    <div class="card card-body border-warning">
+        <h5 class="card-title text-warning">Hazte Premium</h5>
+        <p class="card-text">Accede a reportajes exclusivos, análisis en profundidad de nuestros expertos y disfruta de
+            todo el contenido sin publicidad molesta al suscribirte a nuestra versión Premium.</p>
     </div>
+</div>
 
+<div class="collapse" id="collapsePrivacy">
+    <div class="card card-body border-secondary">
+        <h5 class="card-title text-secondary">Tu privacidad importa</h5>
+        <p class="card-text">Nos tomamos muy en serio tu privacidad. Tus datos están protegidos y nunca compartiremos tu
+            información personal con terceros sin tu consentimiento explícito. Cumplimos estrictamente con el RGPD.</p>
+    </div>
 </div>
