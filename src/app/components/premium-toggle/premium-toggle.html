@@ -1,7 +1,6 @@
-<div class="d-flex justify-content-end mb-3">
+<div class="d-flex justify-content-end mb-3 ">
   <div class="form-check form-switch">
-    <input class="form-check-input" type="checkbox" id="switchPremium"
-      [checked]="excluirPremium"
+    <input class="form-check-input" type="checkbox" id="switchPremium" [checked]="excluirPremium"
       (change)="onToggle($event)">
     <label class="form-check-label ms-2" for="switchPremium">
       Excluir noticias premium
@@ -9,3 +8,14 @@
   </div>
 </div>
 
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11" *ngIf="showToast">
+  <div id="liveToast" class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <strong class="me-auto">Notificación</strong>
+      <button type="button" class="btn-close" (click)="showToast = false" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      {{ toastMessage }}
+    </div>
+  </div>
+</div>
